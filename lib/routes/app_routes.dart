@@ -22,7 +22,7 @@ class AppRoutes {
     ),
     GetPage(
       name: login,
-      page: () => const LogIn(),
+      page: () =>  LogIn(),
       transition: Transition.fadeIn, // Add transition here
       transitionDuration: const Duration(milliseconds: 500), // Optional: specify duration
     ),

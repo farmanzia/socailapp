@@ -7,6 +7,7 @@ class AppColor{
   static const kBg=Color(0xffF0F0F3);
   static const kDarkGrey=Color(0xff505050);
   static Color  kGrey=const Color(0xff515151).withOpacity(0.5);
+  static Color  shadowColor=const Color(0xff000000).withOpacity(0.25);
   static const List<Color> gradientColor = [
     Color(0xff5151C6),
     Color(0xff5151C6),

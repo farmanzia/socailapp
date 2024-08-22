@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:socialapp/utils/app_color.dart';
 
 class BaseScaffold extends StatelessWidget {
   final Widget? appBar;
@@ -15,6 +16,7 @@ class BaseScaffold extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: AppColor.kWhite,
       appBar: appBar != null
           ? PreferredSize(
         preferredSize: const Size.fromHeight(kToolbarHeight),

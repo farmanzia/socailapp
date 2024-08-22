@@ -14,12 +14,18 @@ class Dimensions {
   double width(double ratio) => screenWidth() * ratio;
 
   // Predefined Spacing based on screen height
+  double get paddingExtraSmall => height(0.003); // 1% of screen height
   double get paddingSmall => height(0.01); // 1% of screen height
   double get paddingMedium => height(0.02); // 2% of screen height
   double get paddingLarge => height(0.03); // 3% of screen height
   double get paddingXL => height(0.055); // 3% of screen height
+  double get paddingXXL => height(0.1); // 3% of screen height
   double get marginSmall => height(0.01); // 1% of screen height
   double get marginMedium => height(0.02); // 2% of screen height
   double get marginLarge => height(0.03); // 3% of screen height
+  double get borderRadius=>10.0;
+  double get borderRadiusSmall=>5.0;
+  double get borderRadiusLarge=>28.0;
+
 
 }
