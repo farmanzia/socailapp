@@ -1,5 +1,8 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:socialapp/routes/app_routes.dart';
 import 'package:socialapp/utils/app_color.dart';
 import 'package:socialapp/utils/app_style.dart';
 
@@ -8,6 +11,9 @@ class Splash extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    Timer(Duration(seconds: 2), () {
+      Get.toNamed(AppRoutes.login);
+    });
     return Scaffold(
         body: Container(
           width: double.infinity,

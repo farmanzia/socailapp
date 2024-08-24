@@ -1,4 +1,7 @@
 class AppImage{
+  static const  String user='assets/images/svg/user_img.svg';
+  static const  String userAvatar='assets/images/user_avatar.png';
+  static const  String personAvatar='assets/images/person_avatar.png';
   static const  String lightBgVector='assets/images/svg/lightBgVector.svg';
   static const  String darkBgVector='assets/images/svg/darkBgVector.svg';
   static const  String mail='assets/images/svg/mail.svg';
@@ -11,4 +14,7 @@ class AppImage{
   static const  String phone='assets/images/svg/phone.svg';
   static const  String socialIconBg='assets/images/svg/soical_icon_bg.svg';
   static const  String vectorVerifyPhone='assets/images/svg/vector_verify_phone.svg';
+  static const  String permission='assets/images/svg/permission.svg';
+  static const  String contact='assets/images/svg/contact.svg';
+  static const  String location='assets/images/svg/location.svg';
 }
