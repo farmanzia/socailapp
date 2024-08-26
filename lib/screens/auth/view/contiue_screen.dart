@@ -16,6 +16,7 @@ import 'package:socialapp/utils/app_color.dart';
 import 'package:socialapp/utils/app_images.dart';
 import 'package:socialapp/utils/app_style.dart';
 import 'package:socialapp/utils/dimensions.dart';
+import 'package:socialapp/widgets/app_text_formfield.dart';
 
 
 class ContiueScreen extends StatefulWidget {
@@ -126,7 +127,13 @@ class _ContiueScreenState extends State<ContiueScreen> {
                   SizedBox(
                     height: Get.height * 0.04,
                   ),
-
+                  AppTextFormField(
+                      controller: name!,
+                      focusNode: nameFN,
+                      labelText: 'First Name',
+                      isSelected: isName.value,
+                      isPrefixSvg: true,
+                      svgPrefixICon: AppImage.mail),
                   Container(
                     padding: const EdgeInsets.symmetric(vertical: 0.0),
                     height: 44,

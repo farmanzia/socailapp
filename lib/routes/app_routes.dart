@@ -79,7 +79,7 @@ class AppRoutes {
     ),
     GetPage(
       name: landing,
-      page: () =>  Landing(),
+      page: () =>  const LandingScreen(),
       transition: Transition.rightToLeftWithFade, // Different transition for another route
       transitionDuration: const Duration(milliseconds: 700), // Optional: specify duration
     ),
@@ -97,7 +97,7 @@ class AppRoutes {
     ),
     GetPage(
       name: profileSetting,
-      page: () =>  ProfileSetting(),
+      page: () =>  const ProfileSetting(),
       transition: Transition.rightToLeftWithFade, // Different transition for another route
       transitionDuration: const Duration(milliseconds: 700), // Optional: specify duration
     ),

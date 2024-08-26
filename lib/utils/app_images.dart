@@ -17,4 +17,13 @@ class AppImage{
   static const  String permission='assets/images/svg/permission.svg';
   static const  String contact='assets/images/svg/contact.svg';
   static const  String location='assets/images/svg/location.svg';
+
+// bottom bar image
+
+  static const home='assets/bottom_bar_svg/home.svg';
+  static const connection='assets/bottom_bar_svg/connection.svg';
+  static const chat='assets/bottom_bar_svg/chat.svg';
+  static const groups='assets/bottom_bar_svg/groups.svg';
+  static const more='assets/bottom_bar_svg/more.svg';
+
 }

@@ -11,6 +11,7 @@ import 'package:socialapp/utils/app_color.dart';
 import 'package:socialapp/utils/app_images.dart';
 import 'package:socialapp/utils/app_style.dart';
 import 'package:socialapp/utils/dimensions.dart';
+import 'package:socialapp/widgets/app_text_formfield.dart';
 
 
 class FindAccountByEmail extends StatefulWidget {
@@ -22,21 +23,19 @@ class FindAccountByEmail extends StatefulWidget {
 
 class _FindAccountByEmailState extends State<FindAccountByEmail> {
 
-  TextEditingController? phone = TextEditingController();
-  FocusNode phoneFN=FocusNode();
-  RxBool isPhone = false.obs;
-
-
+  TextEditingController? email = TextEditingController();
+  FocusNode emailFn=FocusNode();
+  RxBool isEmail = false.obs;
   @override
   void initState() {
     super.initState();
-    phoneFN.addListener(() {
+    emailFn.addListener(() {
       log("==== listener added");
 
-      if (phoneFN.hasFocus) {
-        isPhone.value = true;
+      if (emailFn.hasFocus) {
+        isEmail.value = true;
       } else {
-        isPhone.value = false;
+        isEmail.value = false;
       }
     });
   }
@@ -66,66 +65,13 @@ class _FindAccountByEmailState extends State<FindAccountByEmail> {
               SizedBox(
                 height: Get.height * 0.02,
               ),
-              Container(
-                padding: const EdgeInsets.symmetric(vertical: 0.0),
-                height: 44,
-                width: double.infinity,
-                decoration: BoxDecoration(
-                  color: AppColor.kWhite,
-                  border: Border.all(color:isPhone.value? AppColor.kPrimary:Colors.transparent),
-                  borderRadius: BorderRadius.circular(dimensions.borderRadius),
-                  boxShadow: [
-                    BoxShadow(
-                        color: AppColor.shadowColor,
-                        blurRadius: 5,
-                        spreadRadius: 0,
-                        offset: const Offset(1, 1))
-                  ],
-                ),
-                child: Center(
-                  child: Row(
-                    children: [
-                      SizedBox(
-                        width: Get.width * 0.02,
-                      ),
-                      SvgPicture.asset(AppImage.mail,color: isPhone.value? AppColor.kPrimary:AppColor.kGrey,)
-                      ,
-                      SizedBox(
-                        width: Get.width * 0.04,
-                      ),
-                      Expanded(
-                        child: SizedBox(
-                          height: 44,
-                          // width: 200,
-                          child: Center(
-                            child:  TextFormField(
-                              controller: phone,
-                              focusNode: phoneFN,
-                              style: TxtStyle.body.copyWith(fontSize: 10, color: AppColor.kPrimary,fontWeight: FontWeight.w500),
-                              decoration: InputDecoration(
-                                hintText: "EMAIL",
-                                labelStyle: TxtStyle.small.copyWith(fontSize: 7,fontWeight: FontWeight.w500),
-                                labelText: "EMAIL",
-                                contentPadding:
-                                const EdgeInsets.only(bottom: 0),
-                                enabledBorder: const OutlineInputBorder(
-                                  borderSide:
-                                  BorderSide(color: Colors.transparent),
-                                ),
-                                focusedBorder: const OutlineInputBorder(
-                                  borderSide: BorderSide(
-                                      color: Colors.transparent),
-                                  gapPadding: 0,
-                                ),
-                              ),
-                            ),
-                          ),
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
-              ),
+              AppTextFormField(
+                  controller: email!,
+                  focusNode: emailFn,
+                  labelText: 'EMAIL',
+                  isSelected: isEmail.value,
+                  isPrefixSvg: true,
+                  svgPrefixICon: AppImage.mail),
               SizedBox(
                 height: Get.height * 0.06,
               ),

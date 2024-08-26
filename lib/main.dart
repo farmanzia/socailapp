@@ -2,6 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 import 'routes/app_routes.dart';
+import 'utils/common.dart';
+
+Common common=Get.put(Common());
 
 void main() {
   runApp(MyApp());
@@ -12,7 +15,7 @@ class MyApp extends StatelessWidget {
     return GetMaterialApp(
       title: "Connect App",
       debugShowCheckedModeBanner: false,
-      initialRoute:'/',
+      initialRoute:AppRoutes.landing,
       getPages: AppRoutes.routes,
     );
   }

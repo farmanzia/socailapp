@@ -10,6 +10,7 @@ import 'package:socialapp/utils/app_color.dart';
 import 'package:socialapp/utils/app_images.dart';
 import 'package:socialapp/utils/app_style.dart';
 import 'package:socialapp/utils/dimensions.dart';
+import 'package:socialapp/widgets/app_text_formfield.dart';
 
 
 class FindAccountByMobile extends StatefulWidget {
@@ -66,67 +67,76 @@ class _FindAccountByMobileState extends State<FindAccountByMobile> {
               SizedBox(
                 height: Get.height * 0.02,
               ),
-              Container(
-                padding: const EdgeInsets.symmetric(vertical: 0.0),
-                height: 44,
-                width: double.infinity,
-                decoration: BoxDecoration(
-                  color: AppColor.kWhite,
-                  border: Border.all(color:isPhone.value? AppColor.kPrimary:Colors.transparent),
-                  borderRadius: BorderRadius.circular(dimensions.borderRadius),
-                  boxShadow: [
-                    BoxShadow(
-                        color: AppColor.shadowColor,
-                        blurRadius: 5,
-                        spreadRadius: 0,
-                        offset: const Offset(1, 1))
-                  ],
-                ),
-                child: Center(
-                  child: Row(
-                    children: [
-                      SizedBox(
-                        width: Get.width * 0.02,
-                      ),
-                       Icon(Icons.phone_outlined,color: isPhone.value? AppColor.kPrimary:AppColor.kGrey,)
-
-                    ,
-                      SizedBox(
-                        width: Get.width * 0.04,
-                      ),
-                      Expanded(
-                        child: SizedBox(
-                          height: 44,
-                          // width: 200,
-                          child: Center(
-                            child:  TextFormField(
-                              controller: phone,
-                              focusNode: phoneFN,
-                              style: TxtStyle.body.copyWith(fontSize: 10, color: AppColor.kPrimary,fontWeight: FontWeight.w500),
-                              decoration: InputDecoration(
-                                hintText: "MOBILE NUMBER",
-                                labelStyle: TxtStyle.small.copyWith(fontSize: 7,fontWeight: FontWeight.w500),
-                                labelText: "MOBILE NUMBER",
-                                contentPadding:
-                                const EdgeInsets.only(bottom: 0),
-                                enabledBorder: const OutlineInputBorder(
-                                  borderSide:
-                                  BorderSide(color: Colors.transparent),
-                                ),
-                                focusedBorder: const OutlineInputBorder(
-                                  borderSide: BorderSide(
-                                      color: Colors.transparent),
-                                  gapPadding: 0,
-                                ),
-                              ),
-                            ),
+                          AppTextFormField(
+                            controller: phone!,
+                            focusNode: phoneFN,
+                            labelText: 'MOBILE NUMBER',
+                            isSelected: isPhone.value,
+                            isPrefixSvg: true,
+                            isPrefix: true,
+                            preFixWidget:  Icon(Icons.phone_outlined,color: AppColor.kGrey,),
                           ),
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
-              ),
+              // Container(
+              //   padding: const EdgeInsets.symmetric(vertical: 0.0),
+              //   height: 44,
+              //   width: double.infinity,
+              //   decoration: BoxDecoration(
+              //     color: AppColor.kWhite,
+              //     border: Border.all(color:isPhone.value? AppColor.kPrimary:Colors.transparent),
+              //     borderRadius: BorderRadius.circular(dimensions.borderRadius),
+              //     boxShadow: [
+              //       BoxShadow(
+              //           color: AppColor.shadowColor,
+              //           blurRadius: 5,
+              //           spreadRadius: 0,
+              //           offset: const Offset(1, 1))
+              //     ],
+              //   ),
+              //   child: Center(
+              //     child: Row(
+              //       children: [
+              //         SizedBox(
+              //           width: Get.width * 0.02,
+              //         ),
+              //          Icon(Icons.phone_outlined,color: isPhone.value? AppColor.kPrimary:AppColor.kGrey,)
+              //
+              //       ,
+              //         SizedBox(
+              //           width: Get.width * 0.04,
+              //         ),
+              //         Expanded(
+              //           child: SizedBox(
+              //             height: 44,
+              //             // width: 200,
+              //             child: Center(
+              //               child:  TextFormField(
+              //                 controller: phone,
+              //                 focusNode: phoneFN,
+              //                 style: TxtStyle.body.copyWith(fontSize: 10, color: AppColor.kPrimary,fontWeight: FontWeight.w500),
+              //                 decoration: InputDecoration(
+              //                   hintText: "MOBILE NUMBER",
+              //                   labelStyle: TxtStyle.small.copyWith(fontSize: 7,fontWeight: FontWeight.w500),
+              //                   labelText: "MOBILE NUMBER",
+              //                   contentPadding:
+              //                   const EdgeInsets.only(bottom: 0),
+              //                   enabledBorder: const OutlineInputBorder(
+              //                     borderSide:
+              //                     BorderSide(color: Colors.transparent),
+              //                   ),
+              //                   focusedBorder: const OutlineInputBorder(
+              //                     borderSide: BorderSide(
+              //                         color: Colors.transparent),
+              //                     gapPadding: 0,
+              //                   ),
+              //                 ),
+              //               ),
+              //             ),
+              //           ),
+              //         ),
+              //       ],
+              //     ),
+              //   ),
+              // ),
                           SizedBox(
                             height: Get.height * 0.06,
                           ),

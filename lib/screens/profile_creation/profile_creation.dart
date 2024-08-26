@@ -16,6 +16,7 @@ import 'package:socialapp/utils/app_color.dart';
 import 'package:socialapp/utils/app_images.dart';
 import 'package:socialapp/utils/app_style.dart';
 import 'package:socialapp/utils/dimensions.dart';
+import 'package:socialapp/widgets/app_text_formfield.dart';
 
 class ProfileCreation extends StatefulWidget {
   ProfileCreation({super.key});
@@ -114,7 +115,7 @@ class _ProfileCreationState extends State<ProfileCreation> {
                   border: Border.all(color: AppColor.kPrimary)),
               child: Container(
                 height: 124,
-                decoration: BoxDecoration(
+                decoration: const BoxDecoration(
                     color: AppColor.lightBlue,
                     shape: BoxShape.circle,
                     image: DecorationImage(
@@ -142,69 +143,11 @@ class _ProfileCreationState extends State<ProfileCreation> {
                   SizedBox(
                     height: Get.height * 0.004,
                   ),
-                  Container(
-                    padding: const EdgeInsets.symmetric(vertical: 0.0),
-                    height: 44,
-                    width: double.infinity,
-                    decoration: BoxDecoration(
-                      color: AppColor.kWhite,
-                      border: Border.all(
-                          color: isName.value
-                              ? AppColor.kPrimary
-                              : Colors.transparent),
-                      borderRadius:
-                          BorderRadius.circular(dimensions.borderRadius),
-                      boxShadow: [
-                        BoxShadow(
-                            color: AppColor.shadowColor,
-                            blurRadius: 5,
-                            spreadRadius: 0,
-                            offset: const Offset(1, 1))
-                      ],
-                    ),
-                    child: Center(
-                      child: Row(
-                        children: [
-                          SizedBox(
-                            width: Get.width * 0.02,
-                          ),
-                          Expanded(
-                            child: SizedBox(
-                              height: 44,
-                              // width: 200,
-                              child: Center(
-                                child: TextFormField(
-                                  controller: name,
-                                  focusNode: nameFN,
-                                  style: TxtStyle.body.copyWith(
-                                      fontSize: 10,
-                                      color: AppColor.kPrimary,
-                                      fontWeight: FontWeight.w500),
-                                  decoration: InputDecoration(
-                                    hintText: "First Name",
-                                    labelStyle: TxtStyle.small.copyWith(
-                                        fontSize: 7,
-                                        fontWeight: FontWeight.w500),
-                                    labelText: "First Name",
-                                    contentPadding:
-                                        const EdgeInsets.only(bottom: 0),
-                                    enabledBorder: const OutlineInputBorder(
-                                      borderSide:
-                                          BorderSide(color: Colors.transparent),
-                                    ),
-                                    focusedBorder: const OutlineInputBorder(
-                                      borderSide:
-                                          BorderSide(color: Colors.transparent),
-                                      gapPadding: 0,
-                                    ),
-                                  ),
-                                ),
-                              ),
-                            ),
-                          )
-                        ],
-                      ),
-                    ),
+                  AppTextFormField(
+                    controller: name!,
+                    focusNode: nameFN,
+                    labelText: 'First Name',
+                    isSelected: isName.value,
                   ),
                   SizedBox(
                     height: Get.height * 0.02,
@@ -216,69 +159,11 @@ class _ProfileCreationState extends State<ProfileCreation> {
                   SizedBox(
                     height: Get.height * 0.004,
                   ),
-                  Container(
-                    padding: const EdgeInsets.symmetric(vertical: 0.0),
-                    height: 44,
-                    width: double.infinity,
-                    decoration: BoxDecoration(
-                      color: AppColor.kWhite,
-                      border: Border.all(
-                          color: isLastName.value
-                              ? AppColor.kPrimary
-                              : Colors.transparent),
-                      borderRadius:
-                          BorderRadius.circular(dimensions.borderRadius),
-                      boxShadow: [
-                        BoxShadow(
-                            color: AppColor.shadowColor,
-                            blurRadius: 5,
-                            spreadRadius: 0,
-                            offset: const Offset(1, 1))
-                      ],
-                    ),
-                    child: Center(
-                      child: Row(
-                        children: [
-                          SizedBox(
-                            width: Get.width * 0.02,
-                          ),
-                          Expanded(
-                            child: SizedBox(
-                              height: 44,
-                              // width: 200,
-                              child: Center(
-                                child: TextFormField(
-                                  controller: lastName,
-                                  focusNode: lastNameFN,
-                                  style: TxtStyle.body.copyWith(
-                                      fontSize: 10,
-                                      color: AppColor.kPrimary,
-                                      fontWeight: FontWeight.w500),
-                                  decoration: InputDecoration(
-                                    hintText: "Last Name",
-                                    labelStyle: TxtStyle.small.copyWith(
-                                        fontSize: 7,
-                                        fontWeight: FontWeight.w500),
-                                    labelText: "Last Name",
-                                    contentPadding:
-                                        const EdgeInsets.only(bottom: 0),
-                                    enabledBorder: const OutlineInputBorder(
-                                      borderSide:
-                                          BorderSide(color: Colors.transparent),
-                                    ),
-                                    focusedBorder: const OutlineInputBorder(
-                                      borderSide:
-                                          BorderSide(color: Colors.transparent),
-                                      gapPadding: 0,
-                                    ),
-                                  ),
-                                ),
-                              ),
-                            ),
-                          )
-                        ],
-                      ),
-                    ),
+                  AppTextFormField(
+                    controller: lastName!,
+                    focusNode: lastNameFN,
+                    labelText: 'Last Name',
+                    isSelected: isLastName.value,
                   ),
                   SizedBox(
                     height: Get.height * 0.02,
@@ -290,69 +175,11 @@ class _ProfileCreationState extends State<ProfileCreation> {
                   SizedBox(
                     height: Get.height * 0.004,
                   ),
-                  Container(
-                    padding: const EdgeInsets.symmetric(vertical: 0.0),
-                    height: 44,
-                    width: double.infinity,
-                    decoration: BoxDecoration(
-                      color: AppColor.kWhite,
-                      border: Border.all(
-                          color: isGender.value
-                              ? AppColor.kPrimary
-                              : Colors.transparent),
-                      borderRadius:
-                          BorderRadius.circular(dimensions.borderRadius),
-                      boxShadow: [
-                        BoxShadow(
-                            color: AppColor.shadowColor,
-                            blurRadius: 5,
-                            spreadRadius: 0,
-                            offset: const Offset(1, 1))
-                      ],
-                    ),
-                    child: Center(
-                      child: Row(
-                        children: [
-                          SizedBox(
-                            width: Get.width * 0.02,
-                          ),
-                          Expanded(
-                            child: SizedBox(
-                              height: 44,
-                              // width: 200,
-                              child: Center(
-                                child: TextFormField(
-                                  controller: gender,
-                                  focusNode: genderFN,
-                                  style: TxtStyle.body.copyWith(
-                                      fontSize: 10,
-                                      color: AppColor.kPrimary,
-                                      fontWeight: FontWeight.w500),
-                                  decoration: InputDecoration(
-                                    hintText: "Gender",
-                                    labelStyle: TxtStyle.small.copyWith(
-                                        fontSize: 7,
-                                        fontWeight: FontWeight.w500),
-                                    labelText: "Gender",
-                                    contentPadding:
-                                        const EdgeInsets.only(bottom: 0),
-                                    enabledBorder: const OutlineInputBorder(
-                                      borderSide:
-                                          BorderSide(color: Colors.transparent),
-                                    ),
-                                    focusedBorder: const OutlineInputBorder(
-                                      borderSide:
-                                          BorderSide(color: Colors.transparent),
-                                      gapPadding: 0,
-                                    ),
-                                  ),
-                                ),
-                              ),
-                            ),
-                          )
-                        ],
-                      ),
-                    ),
+                  AppTextFormField(
+                    controller: gender!,
+                    focusNode: genderFN,
+                    labelText: 'Gender',
+                    isSelected: isGender.value,
                   ),
                   SizedBox(
                     height: Get.height * 0.02,
@@ -364,69 +191,11 @@ class _ProfileCreationState extends State<ProfileCreation> {
                   SizedBox(
                     height: Get.height * 0.004,
                   ),
-                  Container(
-                    padding: const EdgeInsets.symmetric(vertical: 0.0),
-                    height: 44,
-                    width: double.infinity,
-                    decoration: BoxDecoration(
-                      color: AppColor.kWhite,
-                      border: Border.all(
-                          color: isLocation.value
-                              ? AppColor.kPrimary
-                              : Colors.transparent),
-                      borderRadius:
-                          BorderRadius.circular(dimensions.borderRadius),
-                      boxShadow: [
-                        BoxShadow(
-                            color: AppColor.shadowColor,
-                            blurRadius: 5,
-                            spreadRadius: 0,
-                            offset: const Offset(1, 1))
-                      ],
-                    ),
-                    child: Center(
-                      child: Row(
-                        children: [
-                          SizedBox(
-                            width: Get.width * 0.02,
-                          ),
-                          Expanded(
-                            child: SizedBox(
-                              height: 44,
-                              // width: 200,
-                              child: Center(
-                                child: TextFormField(
-                                  controller: location,
-                                  focusNode: locationFN,
-                                  style: TxtStyle.body.copyWith(
-                                      fontSize: 10,
-                                      color: AppColor.kPrimary,
-                                      fontWeight: FontWeight.w500),
-                                  decoration: InputDecoration(
-                                    hintText: "Location",
-                                    labelStyle: TxtStyle.small.copyWith(
-                                        fontSize: 7,
-                                        fontWeight: FontWeight.w500),
-                                    labelText: "Location",
-                                    contentPadding:
-                                        const EdgeInsets.only(bottom: 0),
-                                    enabledBorder: const OutlineInputBorder(
-                                      borderSide:
-                                          BorderSide(color: Colors.transparent),
-                                    ),
-                                    focusedBorder: const OutlineInputBorder(
-                                      borderSide:
-                                          BorderSide(color: Colors.transparent),
-                                      gapPadding: 0,
-                                    ),
-                                  ),
-                                ),
-                              ),
-                            ),
-                          )
-                        ],
-                      ),
-                    ),
+                  AppTextFormField(
+                    controller: location!,
+                    focusNode: locationFN,
+                    labelText: 'Select',
+                    isSelected: isLocation.value,
                   ),
                   SizedBox(
                     height: Get.height * 0.02,
@@ -441,64 +210,12 @@ class _ProfileCreationState extends State<ProfileCreation> {
                   SizedBox(
                     height: Get.height * 0.004,
                   ),
-                  Container(
-                    padding: const EdgeInsets.symmetric(vertical: 0.0),
-                    height: 100,
-                    width: double.infinity,
-                    decoration: BoxDecoration(
-                      color: AppColor.kWhite,
-                      border: Border.all(
-                          color: isAboutMe.value
-                              ? AppColor.kPrimary
-                              : Colors.transparent),
-                      borderRadius:
-                          BorderRadius.circular(dimensions.borderRadius),
-                      boxShadow: [
-                        BoxShadow(
-                            color: AppColor.shadowColor,
-                            blurRadius: 5,
-                            spreadRadius: 0,
-                            offset: const Offset(1, 1))
-                      ],
-                    ),
-                    child: Row(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        SizedBox(
-                          width: Get.width * 0.02,
-                        ),
-                        Expanded(
-                          child: SizedBox(
-                            height: 100,
-                            child: TextFormField(
-                              controller: aboutMe,
-                              focusNode: aboutFN,
-                              style: TxtStyle.body.copyWith(
-                                  fontSize: 10,
-                                  color: AppColor.kPrimary,
-                                  fontWeight: FontWeight.w500),
-                              maxLines: 4,
-                              decoration: InputDecoration(
-                                hintText: "About Me",
-                                labelStyle: TxtStyle.small.copyWith(
-                                    fontSize: 7, fontWeight: FontWeight.w500),
-                                labelText: "About Me",
-                                contentPadding:
-                                    const EdgeInsets.only(bottom: 0),
-                                enabledBorder: const OutlineInputBorder(
-                                  borderSide:
-                                      BorderSide(color: Colors.transparent),
-                                ),
-                                focusedBorder: const OutlineInputBorder(
-                                  borderSide:
-                                      BorderSide(color: Colors.transparent),
-                                ),
-                              ),
-                            ),
-                          ),
-                        )
-                      ],
-                    ),
+                  AppTextFormField(
+                    controller: aboutMe!,
+                    focusNode: aboutFN,
+                    labelText: 'About',
+                    isSelected: isAboutMe.value,
+                    maxLines: 4,
                   ),
                   SizedBox(
                     height: Get.height * 0.005,
