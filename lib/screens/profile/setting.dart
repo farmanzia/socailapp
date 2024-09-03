@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
+import 'package:get/get.dart';
 import 'package:socialapp/utils/app_style.dart';
+
 class SettingScreen extends StatefulWidget {
   const SettingScreen({super.key});
 
@@ -10,12 +13,9 @@ class SettingScreen extends StatefulWidget {
 class _SettingScreenState extends State<SettingScreen> {
   @override
   Widget build(BuildContext context) {
-    return  Scaffold(
+    return Scaffold(
       appBar: AppBar(
-        title: Container(
-          child: Image.asset('assets/images/png/Group.png',height: 20,width: 20,),
-        ),
-
+        title: Image.asset('assets/images/png/cros.png', height: 20, width: 20,),
         centerTitle: false,
       ),
       body: Padding(
@@ -24,13 +24,13 @@ class _SettingScreenState extends State<SettingScreen> {
           children: [
             Row(
               children: [
-                Image.asset('assets/images/png/group2.png',height: 50,width: 50,),
+                Image.asset('assets/images/png/group.png', height: 70, width: 70,),
                 SizedBox(width: 15,),
                 Column(
+                  crossAxisAlignment: CrossAxisAlignment.start, // Align text to the left
                   children: [
-                    Text('CONNECT APP',style: TextStyle(fontSize: 18,fontWeight: FontWeight.bold,color: Colors.blue),),
-
-                    Text('This is lorem ipsum tagline line purpose',style: TxtStyle.small,),
+                    Text('CONNECT APP', style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold, color: Colors.blue),),
+                    Text('This is lorem ipsum tagline line purpose', style: TxtStyle.small,),
                   ],
                 )
               ],
@@ -38,104 +38,73 @@ class _SettingScreenState extends State<SettingScreen> {
             SizedBox(height: 30,),
             Row(
               children: [
-                Icon(Icons.settings,color: Colors.deepPurple,size: 30,),
+                Icon(Icons.settings, color: Colors.deepPurple, size: 33,),
                 SizedBox(width: 10,),
-                Text("Profile Setting",style: TxtStyle.small,),
+                Expanded(
+                  child: Text("Profile Setting", style: TxtStyle.small,),
+                ),
               ],
             ),
-            SizedBox(
-              height: 20,
-            ),
+            SizedBox(height: 20,),
             Row(
               children: [
-                Icon(Icons.ios_share,color: Colors.deepPurple,size: 30),
+                Icon(Icons.ios_share, color: Colors.deepPurple, size: 33,),
                 SizedBox(width: 10,),
-                Text("Share",style: TxtStyle.small,),
+                Expanded(
+                  child: Text("Share", style: TxtStyle.small,),
+                ),
               ],
             ),
-            SizedBox(
-              height: 20,
-            ),
+            SizedBox(height: 20,),
             Row(
               children: [
-                Icon(Icons.feedback,color: Colors.deepPurple,size: 30),
+                Icon(Icons.feedback, color: Colors.deepPurple, size: 33,),
                 SizedBox(width: 10,),
-                Text("Feedback",style: TxtStyle.small,),
+                Expanded(
+                  child: Text("Feedback", style: TxtStyle.small,),
+                ),
               ],
             ),
-            SizedBox(
-              height: 20,
-            ),
+            SizedBox(height: 20,),
             Row(
               children: [
-                Icon(Icons.privacy_tip,color: Colors.deepPurple,size: 30,),
+                Icon(Icons.privacy_tip, color: Colors.deepPurple, size: 33,),
                 SizedBox(width: 10,),
-                Text("Privacy",style: TxtStyle.small,),
+                Expanded(
+                  child: Text("Privacy", style: TxtStyle.small,),
+                ),
               ],
             ),
-            SizedBox(
-              height: 20,
-            ),
+            SizedBox(height: 20,),
             Row(
               children: [
-                Icon(Icons.more,color: Colors.deepPurple,size: 30,),
+                SvgPicture.asset(
+                  "assets/images/svg/more.svg",
+                  color: Colors.deepPurple,
+                  height: Get.height*0.04,
+                  width: Get.width*0.04,
+                ),
                 SizedBox(width: 10,),
-                Text("More App ",style: TxtStyle.small,),
+                Expanded(
+                  child: Text("More App", style: TxtStyle.small,),
+                ),
               ],
             ),
-            SizedBox(
-              height: 20,
-            ),
+            SizedBox(height: 20,),
             Row(
               children: [
-                Icon(Icons.storage,color: Colors.deepPurple,size: 30,),
+                SvgPicture.asset(
+                  "assets/images/svg/terms.svg",
+                  color: Colors.deepPurple,
+                  height: Get.height*0.04,
+                  width: Get.width*0.04,
+                ),
                 SizedBox(width: 10,),
-                Text("Terms & Condition",style: TxtStyle.small,),
+                Expanded(
+                  child: Text("Terms & Condition", style: TxtStyle.small,),
+                ),
               ],
             ),
-            // SizedBox(
-            //   height: 15,
-            // ),
-            // Row(
-            //   children: [
-            //     Icon(Icons.privacy_tip),
-            //     SizedBox(width: 10,),
-            //     Text("Privacy",style: TxtStyle.small,),
-            //   ],
-            // ),
-            // SizedBox(
-            //   height: 15,
-            // ),
-            // Row(
-            //   children: [
-            //     Icon(Icons.security),
-            //     SizedBox(width: 10,),
-            //     Text("Security",style: TxtStyle.small,),
-            //   ],
-            // ),
-            // SizedBox(
-            //   height: 15,
-            // ),
-            // Row(
-            //   children: [
-            //     Icon(Icons.help),
-            //     SizedBox(width: 10,),
-            //     Text("Help",style: TxtStyle.small,),
-            //   ],
-            // ),
-            // SizedBox(
-            //   height: 15,
-            // ),Row(
-            //   children: [
-            //     Icon(Icons.error),
-            //     SizedBox(width: 10,),
-            //     Text("About",style: TxtStyle.small,),
-            //   ],
-            // ),
-            // SizedBox(
-            //   height: 15,
-            // ),
-
           ],
         ),
       ),

@@ -1,7 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
 import 'package:socialapp/routes/app_routes.dart';
+import 'package:socialapp/utils/app_color.dart';
+import 'package:socialapp/utils/app_images.dart';
 import 'package:socialapp/utils/app_style.dart';
+import 'package:socialapp/utils/dimensions.dart';
+import 'package:socialapp/widgets/drawerWidget.dart';
+
 class ProfileSetting extends StatefulWidget {
   const ProfileSetting({super.key});
 
@@ -12,117 +18,146 @@ class ProfileSetting extends StatefulWidget {
 class _ProfileSettingState extends State<ProfileSetting> {
   @override
   Widget build(BuildContext context) {
-    return  Scaffold(
+    var di = Dimensions(context);
+
+    return Scaffold(
       appBar: AppBar(
-        title: Text('Profile Setting',style: TxtStyle.heading,),
+        leading: IconButton(
+          onPressed: () {
+            Get.back();
+          },
+          icon: const Icon(Icons.arrow_back),
+        ),
+        title: const Text(
+          'Profile Setting',
+          style: TxtStyle.heading,
+        ),
         centerTitle: true,
       ),
       body: Padding(
-        padding: const EdgeInsets.all(16.0),
+        padding: const EdgeInsets.all(24.0),
         child: Column(
           children: [
-            Row(
-              children: [
-                Icon(Icons.person_add_alt_1_rounded,size: 30,),
-                SizedBox(width: 10,),
-                Text("Account",style: TxtStyle.small,),
-              ],
+            DrawerWidget(
+              assetName: AppImage.follow,
+              color: AppColor.kDarkGrey,
+              data: "Account",
+              onTap: () {
+                Get.back();
+                Get.toNamed(AppRoutes.account);
+              },
             ),
             SizedBox(
-              height: 15,
+              height: Get.height * 0.03,
             ),
-            Row(
-              children: [
-                Icon(Icons.person,size: 30,),
-                SizedBox(width: 10,),
-                Text("Edit Profile",style: TxtStyle.small,),
-              ],
-            ),
-            SizedBox(
-              height: 15,
-            ),
-            Row(
-              children: [
-                Icon(Icons.g_translate_outlined,size: 30,),
-                SizedBox(width: 10,),
-                Text("Language",style: TxtStyle.small,),
-              ],
+            DrawerWidget(
+              assetName: AppImage.profile,
+              color: AppColor.kDarkGrey,
+              data: "Edit Profile",
+              onTap: () {
+                Get.back();
+                Get.toNamed(AppRoutes.editProfile);
+              },
             ),
             SizedBox(
-              height: 15,
+              height: Get.height * 0.03,
             ),
-            Row(
-              children: [
-                Icon(Icons.headset_mic_outlined,size: 30,),
-                SizedBox(width: 10,),
-                Text("Group",style: TxtStyle.small,),
-              ],
-            ),
-            SizedBox(
-              height: 15,
-            ),
-            Row(
-              children: [
-                Icon(Icons.person_add_alt_outlined,size: 30,),
-                SizedBox(width: 10,),
-                Text("Follow & Invite Friends ",style: TxtStyle.small,),
-              ],
+            DrawerWidget(
+              assetName: AppImage.language,
+              color: AppColor.kDarkGrey,
+              data: "Language",
+              onTap: () {
+                Get.back();
+                Get.toNamed(AppRoutes.profileSetting);
+              },
             ),
             SizedBox(
-              height: 15,
+              height: Get.height * 0.03,
             ),
-            Row(
-              children: [
-                Icon(Icons.notifications,size: 30,),
-                SizedBox(width: 10,),
-                Text("Notification",style: TxtStyle.small,),
-              ],
-            ),
-            SizedBox(
-              height: 15,
-            ),
-            Row(
-              children: [
-                Icon(Icons.privacy_tip,size: 30,),
-                SizedBox(width: 10,),
-                Text("Privacy",style: TxtStyle.small,),
-              ],
+            DrawerWidget(
+              assetName: AppImage.group,
+              color: AppColor.kDarkGrey,
+              data: "Groups",
+              onTap: () {
+                Get.back();
+                Get.toNamed(AppRoutes.profileSetting);
+              },
             ),
             SizedBox(
-              height: 15,
+              height: Get.height * 0.03,
             ),
-            Row(
-              children: [
-                Icon(Icons.security,size: 30,),
-                SizedBox(width: 10,),
-                Text("Security",style: TxtStyle.small,),
-              ],
-            ),
-            SizedBox(
-              height: 15,
-            ),
-            Row(
-              children: [
-                Icon(Icons.help,size: 30,),
-                SizedBox(width: 10,),
-                Text("Help",style: TxtStyle.small,),
-              ],
+            DrawerWidget(
+              assetName: AppImage.follow,
+              color: AppColor.kDarkGrey,
+              data: "Follow & Invite Friends",
+              onTap: () {
+                Get.back();
+                Get.toNamed(AppRoutes.profileSetting);
+              },
             ),
             SizedBox(
-              height: 15,
-            ),Row(
-              children: [
-                Icon(Icons.error,size: 30,),
-                SizedBox(width: 10,),
-                Text("About",style: TxtStyle.small,),
-              ],
+              height: Get.height * 0.03,
+            ),
+            DrawerWidget(
+              assetName: AppImage.notification,
+              color: AppColor.kDarkGrey,
+              data: "Notification",
+              onTap: () {
+                Get.back();
+                Get.toNamed(AppRoutes.profileSetting);
+              },
             ),
             SizedBox(
-              height: 15,
+              height: Get.height * 0.03,
             ),
-            TextButton(onPressed: (){
-              // Get.toNamed(AppRoutes.groupScreen);
-            }, child: Text('next screen',style: TxtStyle.heading,))
+            DrawerWidget(
+              assetName: AppImage.privacy,
+              color: AppColor.kDarkGrey,
+              data: "Privacy",
+              onTap: () {
+                Get.back();
+                Get.toNamed(AppRoutes.profileSetting);
+              },
+            ),
+            SizedBox(
+              height: Get.height * 0.03,
+            ),
+            DrawerWidget(
+              assetName: AppImage.security,
+              color: AppColor.kDarkGrey,
+              data: "Security",
+              onTap: () {
+                Get.back();
+                Get.toNamed(AppRoutes.profileSetting);
+              },
+            ),
+            SizedBox(
+              height: Get.height * 0.03,
+            ),
+            DrawerWidget(
+              assetName: AppImage.help,
+              color: AppColor.kDarkGrey,
+              data: "Help",
+              onTap: () {
+                Get.back();
+                Get.toNamed(AppRoutes.profileSetting);
+              },
+            ),
+            SizedBox(
+              height: Get.height * 0.03,
+            ),
+            DrawerWidget(
+              assetName: AppImage.about,
+              color: AppColor.kDarkGrey,
+              data: "About",
+              onTap: () {
+                Get.back();
+                Get.toNamed(AppRoutes.profileSetting);
+              },
+            ),
+            SizedBox(
+              height: Get.height * 0.03,
+            ),
           ],
         ),
       ),

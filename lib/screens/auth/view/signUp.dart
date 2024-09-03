@@ -616,7 +616,7 @@ class _SignUpState extends State<SignUp> {
                     ),
                     GestureDetector(
                       onTap: () {
-                        Get.toNamed(AppRoutes.landing);
+                        Get.toNamed(AppRoutes.profileCreation);
                       },
                       child: Container(
                         height: 40,

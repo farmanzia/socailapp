@@ -61,7 +61,7 @@ class _FindAccountByMobileState extends State<FindAccountByMobile> {
               ),
               Text(
                 "Enter your Mobile",
-                style: TxtStyle.small.copyWith(fontSize: 12),
+                style: TxtStyle.small,
               ),
 
               SizedBox(

@@ -60,7 +60,7 @@ class _FindAccountByEmailState extends State<FindAccountByEmail> {
               ),
               Text(
                 "Enter your Email",
-                style: TxtStyle.small.copyWith(fontSize: 12),
+                style: TxtStyle.small,
               ),
               SizedBox(
                 height: Get.height * 0.02,

@@ -43,7 +43,7 @@ class _InterestState extends State<Interest> {
                       Text("Choose up to three.",style: TxtStyle.small),
                       SizedBox(height: Get.height*0.02,),
                       Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        // mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
                           Container(
                             decoration: BoxDecoration(
@@ -66,13 +66,14 @@ class _InterestState extends State<Interest> {
                                 ],),
                             ),
                           ),
+                          SizedBox(width: Get.width*0.02,),
                           Container(
                             decoration: BoxDecoration(
                                 border: Border.all(color: AppColor.kGrey),
 
                                 borderRadius: BorderRadius.circular(10)),
                             child: Padding(
-                              padding:  EdgeInsets.all(dimensions.paddingLarge),
+                              padding:  EdgeInsets.symmetric(vertical:  dimensions.paddingLarge,horizontal: dimensions.paddingSmall),
                               child: Row(
                                 mainAxisSize :MainAxisSize.min,
                                 children: [
@@ -81,10 +82,28 @@ class _InterestState extends State<Interest> {
                                 ],),
                             ),
                           ),
+                          // Container(
+                          //   decoration: BoxDecoration(
+                          //       border: Border.all(color: AppColor.kGrey),
+                          //       borderRadius: BorderRadius.circular(10)),
+                          //   child: Padding(
+                          //     padding:  EdgeInsets.symmetric(horizontal: dimensions.paddingExtraSmall ,vertical:  dimensions.paddingLarge),
+                          //     child: Wrap(
+                          //       // mainAxisSize :MainAxisSize.min,
+                          //       children: [
+                          //         Text('+ ',style: TxtStyle.caption.copyWith(color: AppColor.kGrey),)   ,
+                          //         Text(interest[2],style: TxtStyle.caption,)
+                          //       ],),
+                          //   ),
+                          // ),
+                        ],
+                      ),
+                      SizedBox(height: Get.height*0.02,),
+                      Row(
+                        children: [
                           Container(
                             decoration: BoxDecoration(
                                 border: Border.all(color: AppColor.kGrey),
-
                                 borderRadius: BorderRadius.circular(10)),
                             child: Padding(
                               padding:  EdgeInsets.symmetric(horizontal: dimensions.paddingSmall ,vertical:  dimensions.paddingLarge),
@@ -92,26 +111,27 @@ class _InterestState extends State<Interest> {
                                 mainAxisSize :MainAxisSize.min,
                                 children: [
                                   Text('+ ',style: TxtStyle.caption.copyWith(color: AppColor.kGrey),)   ,
-                                  Text(interest[2],style: TxtStyle.caption,)
+                                  Text(interest[3],style: TxtStyle.caption,)
+                                ],),
+                            ),
+                          ),
+                          SizedBox(width: Get.width*0.02,),
+                          Container(
+                            decoration: BoxDecoration(
+                                border: Border.all(color: AppColor.kGrey),
+                                borderRadius: BorderRadius.circular(10)),
+                            child: Padding(
+                              padding:  EdgeInsets.symmetric(horizontal: dimensions.paddingExtraSmall ,vertical:  dimensions.paddingLarge),
+                              child: Wrap(
+                                // mainAxisSize :MainAxisSize.min,
+                                children: [
+                                  Text('+ ',style: TxtStyle.caption.copyWith(color: AppColor.kGrey),)   ,
+                                  Text(interest[2],style: TxtStyle.caption.copyWith(fontSize:
+                                  14),)
                                 ],),
                             ),
                           ),
                         ],
-                      ),
-                      SizedBox(height: Get.height*0.02,),
-                      Container(
-                        decoration: BoxDecoration(
-                            border: Border.all(color: AppColor.kGrey),
-                            borderRadius: BorderRadius.circular(10)),
-                        child: Padding(
-                          padding:  EdgeInsets.symmetric(horizontal: dimensions.paddingSmall ,vertical:  dimensions.paddingLarge),
-                          child: Row(
-                            mainAxisSize :MainAxisSize.min,
-                            children: [
-                              Text('+ ',style: TxtStyle.caption.copyWith(color: AppColor.kGrey),)   ,
-                              Text(interest[3],style: TxtStyle.caption,)
-                            ],),
-                        ),
                       ),
                       const Spacer(),
                       Center(

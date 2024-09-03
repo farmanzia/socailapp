@@ -17,6 +17,7 @@ class  AppTextFormField extends StatelessWidget {
   final String labelText;
   final String? hintText;
   final int? maxLines;
+ final bool? enabled;
   final bool obscureText;
   final bool isSelected;
   final bool isPrefix;
@@ -33,6 +34,8 @@ class  AppTextFormField extends StatelessWidget {
    required this.controller,
     required this.focusNode,
 this.maxLines=1,
+
+     this.enabled,
     required this.labelText,
     this.obscureText = false,
     required this.isSelected,
@@ -50,7 +53,7 @@ this.maxLines=1,
     final dimensions = Dimensions(context);
     return     Container(
       padding: const EdgeInsets.symmetric(vertical: 0.0),
-      height:maxLines==1? 44:80,
+      height:maxLines==1? 44:maxLines==2?80:120,
       width: double.infinity,
       decoration: BoxDecoration(
         color: AppColor.kWhite,
@@ -86,17 +89,17 @@ this.maxLines=1,
             Expanded(
               child: SizedBox(
                 height: 44,
-
                 child: Center(
                   child:  TextFormField(
                     controller: controller,
                     focusNode: focusNode,
+                    enabled:enabled??true,
                     maxLines: maxLines??1,
                     style: TxtStyle.small.copyWith(color: AppColor.kPrimary,fontWeight: FontWeight.w500),
                    obscureText: obscureText,
                     decoration: InputDecoration(
                       hintText: hintText,
-                      labelStyle: TxtStyle.small.copyWith(color: AppColor.kGrey,fontSize: 7),
+                      labelStyle: TxtStyle.small.copyWith(color: AppColor.kGrey),
                       labelText: labelText,
                       // prefix:ispPrefix?preFixWidget:null,
                       // suffix: isSuffix?suffixWidget:null,

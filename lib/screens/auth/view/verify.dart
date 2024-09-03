@@ -133,7 +133,7 @@ class _VerifyState extends State<Verify> {
                 ),
                 GestureDetector(
                   onTap: (){
-                    Get.toNamed(AppRoutes.continueScreen);
+                    Get.toNamed(AppRoutes.login);
                   },
                   child: Container(
                     height: 40,

@@ -6,6 +6,8 @@ import 'package:socialapp/screens/home/groups.dart';
 import 'package:socialapp/screens/home/up_coming_events.dart';
 import 'package:socialapp/screens/home/view_model.dart';
 import 'package:socialapp/screens/home/widgets/app_bottom_bar.dart';
+import 'package:socialapp/utils/app_color.dart';
+import 'package:socialapp/utils/app_images.dart';
 
 import '../../main.dart';
 import 'chat.dart';
@@ -29,6 +31,7 @@ class _LandingScreenState extends State<LandingScreen> {
   @override
   Widget build(BuildContext context) {
     return Obx(() => BaseScaffold(
+
           body: _getPage(common.bottomBarIndex.value),
           bottomNavigationBar: bottomBar(context),
         ));
@@ -37,13 +40,13 @@ class _LandingScreenState extends State<LandingScreen> {
   Widget _getPage(int index) {
     switch (index) {
       case 0:
-        return const Home();
+        return  Home();
       case 1:
-        return Connection();
+        return const Connection();
       case 2:
         return Chat();
       case 3:
-        return const Groups();
+        return  Groups();
       case 4:
         return UpComing();
       default:

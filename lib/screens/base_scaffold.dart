@@ -4,12 +4,16 @@ import 'package:socialapp/utils/app_color.dart';
 class BaseScaffold extends StatelessWidget {
   final Widget? appBar;
   final Widget? bottomNavigationBar;
+  final Widget? drawer;
+  final Widget? floatingActionButton;
   final Widget body;
 
   const BaseScaffold({
     super.key,
     this.appBar,
     this.bottomNavigationBar,
+    this.drawer,
+    this.floatingActionButton,
     required this.body,
   });
 
@@ -17,6 +21,7 @@ class BaseScaffold extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: AppColor.kWhite,
+      drawer:drawer ,
       appBar: appBar != null
           ? PreferredSize(
         preferredSize: const Size.fromHeight(kToolbarHeight),
@@ -24,6 +29,7 @@ class BaseScaffold extends StatelessWidget {
       )
           : null,
       body: body,
+      floatingActionButton: floatingActionButton,
       bottomNavigationBar: bottomNavigationBar,
     );
   }

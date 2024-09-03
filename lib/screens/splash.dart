@@ -11,7 +11,7 @@ class Splash extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    Timer(Duration(seconds: 2), () {
+    Timer(const Duration(seconds: 2), () {
       Get.toNamed(AppRoutes.login);
     });
     return Scaffold(
@@ -24,28 +24,31 @@ class Splash extends StatelessWidget {
               end: Alignment.bottomRight,
             ),
           ),
-          child:  Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            crossAxisAlignment: CrossAxisAlignment.center,
-            children: [
-              Container(
-                width: 134,
-                height: 134,
-                decoration: BoxDecoration(color: AppColor.kWhite,
-                borderRadius: BorderRadius.circular(30)
+          child:  Center(
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                Container(
+                  width: 134,
+                  height: 134,
+                  decoration: BoxDecoration(color: AppColor.kWhite,
+                  borderRadius: BorderRadius.circular(30)
+                  ),
                 ),
-              ),
-              SizedBox(height: Get.height*0.02,),
-              Text(
-                'Connect App',
-                style: TxtStyle.heading.copyWith(color: AppColor.kWhite)
-              ),
-              SizedBox(height: Get.height*0.0009,),
-              Text(
-                'This is lorem ipsum text for tagline purpose',
-                style: TxtStyle.caption.copyWith(color: AppColor.kWhite)
-              ),
-            ],
+                SizedBox(height: Get.height*0.02,),
+                Text(
+                  'Connect App',
+                  style: TxtStyle.heading.copyWith(color: AppColor.kWhite)
+                ),
+                SizedBox(height: Get.height*0.0009,),
+                Text(
+                  textAlign: TextAlign.center,
+                  'This is lorem ipsum text for tagline purpose',
+                  style: TxtStyle.caption.copyWith(color: AppColor.kWhite)
+                ),
+              ],
+            ),
           ),
         ),);
   }

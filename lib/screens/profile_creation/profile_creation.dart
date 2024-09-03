@@ -83,7 +83,7 @@ class _ProfileCreationState extends State<ProfileCreation> {
       if (aboutFN.hasFocus) {
         isAboutMe.value = true;
       } else {
-        isAboutMe.value = false;
+        isAboutMe. value = false;
       }
     });
   }
@@ -93,164 +93,166 @@ class _ProfileCreationState extends State<ProfileCreation> {
     final dimensions = Dimensions(context);
     return BaseScaffold(
       body: Obx(
-        () => Column(
-          crossAxisAlignment: CrossAxisAlignment.center,
-          children: [
-            SizedBox(
-              height: Get.height * 0.08,
-            ),
-            const Text(
-              "Profile Creation",
-              style: TxtStyle.heading,
-            ),
-            SizedBox(
-              height: Get.height * 0.025,
-            ),
-            // SvgPicture.asset(AppImage.user),
-            Container(
-              height: Get.height * 0.15,
-              padding: EdgeInsets.all(dimensions.paddingExtraSmall),
-              decoration: BoxDecoration(
-                  shape: BoxShape.circle,
-                  border: Border.all(color: AppColor.kPrimary)),
-              child: Container(
-                height: 124,
-                decoration: const BoxDecoration(
-                    color: AppColor.lightBlue,
-                    shape: BoxShape.circle,
-                    image: DecorationImage(
-                        image: AssetImage(
-                      AppImage.userAvatar,
-                    ))),
+        () => SingleChildScrollView(
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              SizedBox(
+                height: Get.height * 0.08,
               ),
-            ),
-            SizedBox(
-              height: Get.height * 0.015,
-            ),
-            Padding(
-              padding: EdgeInsets.only(
-                  left: dimensions.paddingXL, right: dimensions.paddingXL),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  SizedBox(
-                    height: Get.height * 0.04,
-                  ),
-                  const Text(
-                    "First Name*",
-                    style: TxtStyle.caption,
-                  ),
-                  SizedBox(
-                    height: Get.height * 0.004,
-                  ),
-                  AppTextFormField(
-                    controller: name!,
-                    focusNode: nameFN,
-                    labelText: 'First Name',
-                    isSelected: isName.value,
-                  ),
-                  SizedBox(
-                    height: Get.height * 0.02,
-                  ),
-                  const Text(
-                    "Last Name*",
-                    style: TxtStyle.caption,
-                  ),
-                  SizedBox(
-                    height: Get.height * 0.004,
-                  ),
-                  AppTextFormField(
-                    controller: lastName!,
-                    focusNode: lastNameFN,
-                    labelText: 'Last Name',
-                    isSelected: isLastName.value,
-                  ),
-                  SizedBox(
-                    height: Get.height * 0.02,
-                  ),
-                  const Text(
-                    "Gender",
-                    style: TxtStyle.caption,
-                  ),
-                  SizedBox(
-                    height: Get.height * 0.004,
-                  ),
-                  AppTextFormField(
-                    controller: gender!,
-                    focusNode: genderFN,
-                    labelText: 'Gender',
-                    isSelected: isGender.value,
-                  ),
-                  SizedBox(
-                    height: Get.height * 0.02,
-                  ),
-                  const Text(
-                    "Location",
-                    style: TxtStyle.caption,
-                  ),
-                  SizedBox(
-                    height: Get.height * 0.004,
-                  ),
-                  AppTextFormField(
-                    controller: location!,
-                    focusNode: locationFN,
-                    labelText: 'Select',
-                    isSelected: isLocation.value,
-                  ),
-                  SizedBox(
-                    height: Get.height * 0.02,
-                  ),
-                  SizedBox(
-                    height: Get.height * 0.004,
-                  ),
-                  const Text(
-                    "About Me",
-                    style: TxtStyle.caption,
-                  ),
-                  SizedBox(
-                    height: Get.height * 0.004,
-                  ),
-                  AppTextFormField(
-                    controller: aboutMe!,
-                    focusNode: aboutFN,
-                    labelText: 'About',
-                    isSelected: isAboutMe.value,
-                    maxLines: 4,
-                  ),
-                  SizedBox(
-                    height: Get.height * 0.005,
-                  ),
-                  SizedBox(
-                    height: Get.height * 0.05,
-                  ),
-                  Center(
-                    child: GestureDetector(
-                      onTap: () {
-                        Get.toNamed(AppRoutes.permission);
-                      },
-                      child: Container(
-                        height: 40,
-                        width: Get.width * 0.6,
-                        decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(
-                                dimensions.borderRadiusLarge),
-                            gradient: const LinearGradient(
-                                colors: AppColor.gradientColor)),
-                        child: Center(
-                            child: Text(
-                          "Next",
-                          style: TxtStyle.body.copyWith(
-                              fontWeight: FontWeight.w700,
-                              fontSize: 15,
-                              color: AppColor.kWhite),
-                        )),
+              const Text(
+                "Profile Creation",
+                style: TxtStyle.heading,
+              ),
+              SizedBox(
+                height: Get.height * 0.025,
+              ),
+              // SvgPicture.asset(AppImage.user),
+              Container(
+                height: Get.height * 0.15,
+                padding: EdgeInsets.all(dimensions.paddingExtraSmall),
+                decoration: BoxDecoration(
+                    shape: BoxShape.circle,
+                    border: Border.all(color: AppColor.kPrimary)),
+                child: Container(
+                  height: 124,
+                  decoration: const BoxDecoration(
+                      color: AppColor.lightBlue,
+                      shape: BoxShape.circle,
+                      image: DecorationImage(
+                          image: AssetImage(
+                        AppImage.userAvatar,
+                      ))),
+                ),
+              ),
+              SizedBox(
+                height: Get.height * 0.015,
+              ),
+              Padding(
+                padding: EdgeInsets.only(
+                    left: dimensions.paddingXL, right: dimensions.paddingXL),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    SizedBox(
+                      height: Get.height * 0.04,
+                    ),
+                    const Text(
+                      "First Name*",
+                      style: TxtStyle.caption,
+                    ),
+                    SizedBox(
+                      height: Get.height * 0.004,
+                    ),
+                    AppTextFormField(
+                      controller: name!,
+                      focusNode: nameFN,
+                      labelText: 'First Name',
+                      isSelected: isName.value,
+                    ),
+                    SizedBox(
+                      height: Get.height * 0.02,
+                    ),
+                    const Text(
+                      "Last Name*",
+                      style: TxtStyle.caption,
+                    ),
+                    SizedBox(
+                      height: Get.height * 0.004,
+                    ),
+                    AppTextFormField(
+                      controller: lastName!,
+                      focusNode: lastNameFN,
+                      labelText: 'Last Name',
+                      isSelected: isLastName.value,
+                    ),
+                    SizedBox(
+                      height: Get.height * 0.02,
+                    ),
+                    const Text(
+                      "Gender",
+                      style: TxtStyle.caption,
+                    ),
+                    SizedBox(
+                      height: Get.height * 0.004,
+                    ),
+                    AppTextFormField(
+                      controller: gender!,
+                      focusNode: genderFN,
+                      labelText: 'Gender',
+                      isSelected: isGender.value,
+                    ),
+                    SizedBox(
+                      height: Get.height * 0.02,
+                    ),
+                    const Text(
+                      "Location",
+                      style: TxtStyle.caption,
+                    ),
+                    SizedBox(
+                      height: Get.height * 0.004,
+                    ),
+                    AppTextFormField(
+                      controller: location!,
+                      focusNode: locationFN,
+                      labelText: 'Select',
+                      isSelected: isLocation.value,
+                    ),
+                    SizedBox(
+                      height: Get.height * 0.02,
+                    ),
+                    SizedBox(
+                      height: Get.height * 0.004,
+                    ),
+                    const Text(
+                      "About Me",
+                      style: TxtStyle.caption,
+                    ),
+                    SizedBox(
+                      height: Get.height * 0.004,
+                    ),
+                    AppTextFormField(
+                      controller: aboutMe!,
+                      focusNode: aboutFN,
+                      labelText: 'About',
+                      isSelected: isAboutMe.value,
+                      maxLines: 4,
+                    ),
+                    SizedBox(
+                      height: Get.height * 0.005,
+                    ),
+                    SizedBox(
+                      height: Get.height * 0.05,
+                    ),
+                    Center(
+                      child: GestureDetector(
+                        onTap: () {
+                          Get.toNamed(AppRoutes.permission);
+                        },
+                        child: Container(
+                          height: 40,
+                          width: Get.width * 0.6,
+                          decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(
+                                  dimensions.borderRadiusLarge),
+                              gradient: const LinearGradient(
+                                  colors: AppColor.gradientColor)),
+                          child: Center(
+                              child: Text(
+                            "Next",
+                            style: TxtStyle.body.copyWith(
+                                fontWeight: FontWeight.w700,
+                                fontSize: 15,
+                                color: AppColor.kWhite),
+                          )),
+                        ),
                       ),
                     ),
-                  ),
-                ],
+                  ],
+                ),
               ),
-            ),
-          ],
+            ],
+          ),
         ),
       ),
     );

@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-
 import 'routes/app_routes.dart';
 import 'utils/common.dart';
 
@@ -15,7 +14,7 @@ class MyApp extends StatelessWidget {
     return GetMaterialApp(
       title: "Connect App",
       debugShowCheckedModeBanner: false,
-      initialRoute:AppRoutes.landing,
+      initialRoute:'/',
       getPages: AppRoutes.routes,
     );
   }

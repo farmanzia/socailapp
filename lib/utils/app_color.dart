@@ -10,6 +10,11 @@ class AppColor{
   static const kDarkGrey=Color(0xff505050);
   static Color  kGrey=const Color(0xff515151).withOpacity(0.5);
   static Color  shadowColor=const Color(0xff000000).withOpacity(0.25);
+  static Color  fieldColor=const Color(0xffF2F2F2);
+  static Color  lightPurple=const Color(0xffEDE9FF);
+  static Color  lightYellow=const Color(0xffFFF5D7);
+  static Color  lightOrange=const Color(0xffFFECEC);
+  static Color  lightGreen=const Color(0xffE4FFEA);
   static const List<Color> gradientColor = [
     Color(0xff5151C6),
     Color(0xff5151C6),

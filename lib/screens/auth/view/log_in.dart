@@ -94,7 +94,7 @@ class _LogInState extends State<LogIn> {
                     Text(
                       "Login",
                       style: TxtStyle.heading.copyWith(
-                          fontSize: 25,
+                          fontSize: 32,
                           color: AppColor.kPrimary,
                           fontWeight: FontWeight.w700),
                     ),
@@ -148,7 +148,7 @@ class _LogInState extends State<LogIn> {
                           alignment: Alignment.centerRight,
                           child: Text("FORGET PASSWORD?",
                               style: TxtStyle.small.copyWith(
-                                  fontSize: 7, color: AppColor.kGrey))),
+                                   color: AppColor.kGrey))),
                     ),
                     SizedBox(
                       height: Get.height * 0.04,

@@ -115,7 +115,7 @@ class _ContiueScreenState extends State<ContiueScreen> {
                   Text(
                     "User Name",
                     style: TxtStyle.heading.copyWith(
-                        fontSize: 15,
+
                         color: AppColor.kPrimary,
                         fontWeight: FontWeight.w700),
                   ),
@@ -127,13 +127,13 @@ class _ContiueScreenState extends State<ContiueScreen> {
                   SizedBox(
                     height: Get.height * 0.04,
                   ),
-                  AppTextFormField(
-                      controller: name!,
-                      focusNode: nameFN,
-                      labelText: 'First Name',
-                      isSelected: isName.value,
-                      isPrefixSvg: true,
-                      svgPrefixICon: AppImage.mail),
+                  // AppTextFormField(
+                  //     controller: name!,
+                  //     focusNode: nameFN,
+                  //     labelText: 'First Name',
+                  //     isSelected: isName.value,
+                  //     isPrefixSvg: true,
+                  //     svgPrefixICon: AppImage.mail),
                   Container(
                     padding: const EdgeInsets.symmetric(vertical: 0.0),
                     height: 44,
@@ -172,10 +172,10 @@ class _ContiueScreenState extends State<ContiueScreen> {
                                 child:  TextFormField(
                                   controller: email,
                                   focusNode: emailFN,
-                                  style: TxtStyle.body.copyWith(fontSize: 10, color: AppColor.kPrimary,fontWeight: FontWeight.w500),
+                                  style: TxtStyle.body.copyWith( color: AppColor.kPrimary,fontWeight: FontWeight.w500),
                                   decoration: InputDecoration(
                                     hintText: "EMAIL",
-                                    labelStyle: TxtStyle.small.copyWith(fontSize: 7,fontWeight: FontWeight.w500),
+                                    labelStyle: TxtStyle.small.copyWith(fontWeight: FontWeight.w500),
                                     labelText: "EMAIL",
                                     contentPadding:
                                     const EdgeInsets.only(bottom: 0),
@@ -258,10 +258,10 @@ class _ContiueScreenState extends State<ContiueScreen> {
                                 child:  TextFormField(
                                   controller: confirmPassController,
                                   focusNode: conPassFN,
-                                  style: TxtStyle.body.copyWith(fontSize: 10, color: AppColor.kPrimary,fontWeight: FontWeight.w500),
+                                  style: TxtStyle.body.copyWith( color: AppColor.kPrimary,fontWeight: FontWeight.w500),
                                   decoration: InputDecoration(
                                     hintText: "PASSWORD",
-                                    labelStyle: TxtStyle.small.copyWith(fontSize: 7,fontWeight: FontWeight.w500),
+                                    labelStyle: TxtStyle.small.copyWith(fontWeight: FontWeight.w500),
                                     labelText: "PASSWORD",
                                     contentPadding:
                                     const EdgeInsets.only(bottom: 0),
@@ -341,10 +341,10 @@ class _ContiueScreenState extends State<ContiueScreen> {
                                 child:  TextFormField(
                                   controller: phone,
                                   focusNode: phoneFN,
-                                  style: TxtStyle.body.copyWith(fontSize: 10, color: AppColor.kPrimary,fontWeight: FontWeight.w500),
+                                  style: TxtStyle.body.copyWith(color: AppColor.kPrimary,fontWeight: FontWeight.w500),
                                   decoration: InputDecoration(
                                     hintText: "PHONE NUMBER",
-                                    labelStyle: TxtStyle.small.copyWith(fontSize: 7,fontWeight: FontWeight.w500),
+                                    labelStyle: TxtStyle.small.copyWith(fontWeight: FontWeight.w500),
                                     labelText: "PHONE NUMBER",
                                     contentPadding:
                                     const EdgeInsets.only(bottom: 0),
