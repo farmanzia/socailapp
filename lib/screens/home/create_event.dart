@@ -378,7 +378,7 @@ class _CreateEventState extends State<CreateEvent> {
                     Center(
                       child: GestureDetector(
                         onTap: () {
-                          Get.toNamed(AppRoutes.permission);
+                         Get.back();
                         },
                         child: Container(
                           height: 40,

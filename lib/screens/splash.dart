@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:socialapp/routes/app_routes.dart';
 import 'package:socialapp/utils/app_color.dart';
+import 'package:socialapp/utils/app_images.dart';
 import 'package:socialapp/utils/app_style.dart';
 
 class Splash extends StatelessWidget {
@@ -11,7 +12,8 @@ class Splash extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    Timer(const Duration(seconds: 2), () {
+    Timer(const Duration(milliseconds
+        : 900), () {
       Get.toNamed(AppRoutes.login);
     });
     return Scaffold(
@@ -33,7 +35,8 @@ class Splash extends StatelessWidget {
                   width: 134,
                   height: 134,
                   decoration: BoxDecoration(color: AppColor.kWhite,
-                  borderRadius: BorderRadius.circular(30)
+                  borderRadius: BorderRadius.circular(30),
+                    image: const DecorationImage(image: AssetImage(AppImage.logo,),fit: BoxFit.fill)
                   ),
                 ),
                 SizedBox(height: Get.height*0.02,),

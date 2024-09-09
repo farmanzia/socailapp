@@ -8,6 +8,7 @@ import 'package:socialapp/utils/app_color.dart';
 import 'package:socialapp/utils/app_images.dart';
 import 'package:socialapp/utils/app_style.dart';
 import 'package:socialapp/utils/dimensions.dart';
+import 'package:socialapp/widgets/AppDrawer.dart';
 
 class Connection extends StatefulWidget {
   const Connection({super.key});
@@ -20,6 +21,9 @@ class _ConnectionState extends State<Connection>
     with SingleTickerProviderStateMixin {
   TextEditingController controller=TextEditingController();
   TabController? tabController;
+
+  final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
+
   @override
   void initState() {
     // TODO: implement initState
@@ -31,15 +35,23 @@ class _ConnectionState extends State<Connection>
   Widget build(BuildContext context) {
     final dimensions = Dimensions(context);
 
-    return BaseScaffold(
+    return Scaffold(
+        key: _scaffoldKey,
+        drawer: const AppDrawer(),
         appBar: AppBar(
           forceMaterialTransparency:true,
-          leading: Padding(
-            padding: const EdgeInsets.all(14.0),
-            child: SvgPicture.asset(
-              AppImage.menu,
-              height: 12,
-              width: 12,
+          leading:  GestureDetector(
+              onTap: () {
+                _scaffoldKey.currentState
+                    ?.openDrawer(); // Use the key to open the drawer
+              },
+            child: Padding(
+              padding: const EdgeInsets.all(14.0),
+              child: SvgPicture.asset(
+                AppImage.menu,
+                height: 12,
+                width: 12,
+              ),
             ),
           ),
           actions: [
@@ -63,7 +75,8 @@ class _ConnectionState extends State<Connection>
             ),
           ],
         ),
-        body: Padding(
+        body:
+        Padding(
       padding: EdgeInsets.all(dimensions.paddingMedium),
       child: Column(children: [
         SizedBox(
@@ -72,8 +85,8 @@ class _ConnectionState extends State<Connection>
         Padding(
           padding: EdgeInsets.symmetric(horizontal: dimensions.paddingSmall),
           child: Container(
-            height: Get.height * 0.06,
-            width: Get.width - 10,
+            // height: Get.height * 0.06,
+            width: Get.width* 0.8,
             decoration: BoxDecoration(
               color: AppColor.kPrimaryLight,
               borderRadius: BorderRadius.circular(
@@ -84,6 +97,8 @@ class _ConnectionState extends State<Connection>
               padding: EdgeInsets.zero,
               dividerColor: Colors.transparent,
               controller: tabController,
+              labelPadding:EdgeInsets.zero,
+              // indicatorColor: Colors.red,
               indicatorWeight: 0, // Set the indicator weight to zero
               // give the indicator a decoration (color and border radius)
               indicator: BoxDecoration(
@@ -92,14 +107,18 @@ class _ConnectionState extends State<Connection>
                 ),
                 color: AppColor.kPrimary,
               ),
+
+              splashBorderRadius: BorderRadius.circular(
+                50.0,
+              ),
               unselectedLabelColor: AppColor.kPrimary,
               labelColor: Colors.white,
-
-              labelStyle: TxtStyle.small.copyWith(color:
+              labelStyle: TxtStyle.caption.copyWith(color:
               AppColor.kWhite),
               // unselectedLabelColor: AppColor.kWhite.withOpacity(0.5),
               tabs: [
                 Tab(
+                  iconMargin: EdgeInsets.zero,
                   child: Container(
                       alignment: Alignment.center,
                       child: const Text('New Connections')),

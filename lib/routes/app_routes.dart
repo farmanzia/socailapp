@@ -9,6 +9,7 @@ import 'package:socialapp/screens/home/create_event.dart';
 import 'package:socialapp/screens/home/event_information.dart';
 import 'package:socialapp/screens/home/home.dart';
 import 'package:socialapp/screens/home/landing.dart';
+import 'package:socialapp/screens/home/message.dart';
 import 'package:socialapp/screens/profile/changepassword.dart';
 import 'package:socialapp/screens/profile/profile.dart';
 import 'package:socialapp/screens/profile/profile_setting.dart';
@@ -50,6 +51,7 @@ class AppRoutes {
   static const String myProfile = '/myProfile';
   static const String account = '/account';
   static const String changePassword = '/changePassword';
+  static const String message = '/message';
 
   static List<GetPage> routes = [
     GetPage(
@@ -115,8 +117,8 @@ class AppRoutes {
     GetPage(
       name: profileSetting,
       page: () =>  const ProfileSetting(),
-      transition: Transition.rightToLeftWithFade, // Different transition for another route
-      transitionDuration: const Duration(milliseconds: 700), // Optional: specify duration
+      // transition: Transition.rightToLeftWithFade, // Different transition for another route
+      // transitionDuration: const Duration(milliseconds: 700), // Optional: specify duration
     ),
     GetPage(
       name: interest,
@@ -159,18 +161,18 @@ class AppRoutes {
       transition: Transition.rightToLeftWithFade, // Different transition for another route
       transitionDuration: const Duration(milliseconds: 700), // Optional: specify duration
     ),
-    GetPage(
-      name: settingScreen,
-      page: () =>   const ProfileSetting(),
-      transition: Transition.rightToLeftWithFade, // Different transition for another route
-      transitionDuration: const Duration(milliseconds: 700), // Optional: specify duration
-    ),
+    // GetPage(
+    //   name: settingScreen,
+    //   page: () =>   const ProfileSetting(),
+    //   // transition: Transition.rightToLeftWithFade, // Different transition for another route
+    //   // transitionDuration: const Duration(milliseconds: 700), // Optional: specify duration
+    // ),
 
     GetPage(
       name: editProfile,
       page: () =>   const EditProfile(),
-      transition: Transition.rightToLeftWithFade, // Different transition for another route
-      transitionDuration: const Duration(milliseconds: 700), // Optional: specify duration
+      // transition: Transition.rightToLeftWithFade, // Different transition for another route
+      // transitionDuration: const Duration(milliseconds: 700), // Optional: specify duration
     ),
     GetPage(
       name: myProfile,
@@ -181,13 +183,19 @@ class AppRoutes {
     GetPage(
       name: account,
       page: () =>   const Account(),
-      transition: Transition.rightToLeftWithFade, // Different transition for another route
-      transitionDuration: const Duration(milliseconds: 700), // Optional: specify duration
+      // transition: Transition.rightToLeftWithFade, // Different transition for another route
+      // transitionDuration: const Duration(milliseconds: 700), // Optional: specify duration
     ),
 
     GetPage(
       name: changePassword,
       page: () =>   const ChangePassword(),
+      transition: Transition.rightToLeftWithFade, // Different transition for another route
+      transitionDuration: const Duration(milliseconds: 700), // Optional: specify duration
+    ),
+    GetPage(
+      name: message,
+      page: () =>    Message(),
       transition: Transition.rightToLeftWithFade, // Different transition for another route
       transitionDuration: const Duration(milliseconds: 700), // Optional: specify duration
     ),

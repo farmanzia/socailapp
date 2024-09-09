@@ -10,23 +10,33 @@ import 'package:socialapp/utils/app_color.dart';
 import 'package:socialapp/utils/app_images.dart';
 import 'package:socialapp/utils/app_style.dart';
 import 'package:socialapp/utils/dimensions.dart';
+import 'package:socialapp/widgets/AppDrawer.dart';
 
 class UpComing extends StatelessWidget {
   UpComing({super.key});
   TextEditingController controller = TextEditingController();
+  final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
 
   @override
   Widget build(BuildContext context) {
     var di = Dimensions(context);
-    return BaseScaffold(
+    return  Scaffold(
+      key: _scaffoldKey,
+      drawer: const AppDrawer(),
         appBar: AppBar(
           forceMaterialTransparency: true,
-          leading: Padding(
-            padding: const EdgeInsets.all(14.0),
-            child: SvgPicture.asset(
-              AppImage.menu,
-              height: 12,
-              width: 12,
+          leading: GestureDetector(
+            onTap: () {
+              _scaffoldKey.currentState
+                  ?.openDrawer(); // Use the key to open the drawer
+            },
+            child: Padding(
+              padding: const EdgeInsets.all(14.0),
+              child: SvgPicture.asset(
+                AppImage.menu,
+                height: 12,
+                width: 12,
+              ),
             ),
           ),
           title: const Text(

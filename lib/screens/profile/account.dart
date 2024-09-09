@@ -133,28 +133,6 @@ class _AccountState extends State<Account> {
                     SizedBox(
                       height: Get.height * 0.03,
                     ),
-                    Center(
-                      child: GestureDetector(
-                        onTap: () {},
-                        child: Container(
-                          height: 40,
-                          width: Get.width * 0.6,
-                          decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(
-                                  dimensions.borderRadiusLarge),
-                              gradient: const LinearGradient(
-                                  colors: AppColor.gradientColor)),
-                          child: Center(
-                              child: Text(
-                            "Create Event",
-                            style: TxtStyle.body.copyWith(
-                                fontWeight: FontWeight.w700,
-                                fontSize: 15,
-                                color: AppColor.kWhite),
-                          )),
-                        ),
-                      ),
-                    ),
                   ],
                 ),
               ),

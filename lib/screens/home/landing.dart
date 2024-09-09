@@ -44,7 +44,7 @@ class _LandingScreenState extends State<LandingScreen> {
       case 1:
         return const Connection();
       case 2:
-        return Chat();
+        return  Chat();
       case 3:
         return  Groups();
       case 4:

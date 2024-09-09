@@ -1,4 +1,5 @@
 class AppImage{
+  static const  String logo='assets/images/logo.jpeg';
   static const  String user='assets/images/svg/user_img.svg';
   static const  String userAvatar='assets/images/user_avatar.png';
   static const  String personAvatar='assets/images/person_avatar.png';
@@ -22,6 +23,14 @@ class AppImage{
   static const  String filter='assets/images/svg/filter.svg';
   static const  String calendar='assets/images/svg/calendar.svg';
   static const  String edit='assets/images/svg/edit.svg';
+  static const  String menuDots='assets/images/svg/menuDots.svg';
+  static const  String send='assets/images/svg/send.svg';
+  static const  String Microphone='assets/images/svg/Microphone.svg';
+  static const  String location2='assets/images/svg/loction.svg';
+  static const  String Gallery='assets/images/svg/Gallery.svg';
+  static const  String doc='assets/images/svg/doc.svg';
+  static const  String Camera='assets/images/svg/Camera.svg';
+  static const  String link='assets/images/svg/link.svg';
 
   //dummy images
   static const  String event1='assets/images/event1.png';

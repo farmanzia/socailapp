@@ -15,7 +15,6 @@ class DrawerWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-
       onTap: onTap,
       child: Row(
         children: [
@@ -27,7 +26,7 @@ class DrawerWidget extends StatelessWidget {
           Text(
             data!,
             style: TxtStyle.caption
-                .copyWith(fontSize: 16, fontWeight: FontWeight.bold),
+                .copyWith(fontSize: 16, fontWeight: FontWeight.w500),
           )
         ],
       ),

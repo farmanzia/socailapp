@@ -6,6 +6,7 @@ import 'package:socialapp/screens/home/groupTab/all.dart';
 import 'package:socialapp/utils/app_color.dart';
 import 'package:socialapp/utils/app_images.dart';
 import 'package:socialapp/utils/app_style.dart';
+import 'package:socialapp/widgets/AppDrawer.dart';
 
 class Groups extends StatefulWidget {
   Groups({super.key});
@@ -18,6 +19,7 @@ class _GroupsState extends State<Groups> {
   RxInt selectedIndex = 0.obs;
 
   RxList<String> list = <String>["All", "My Groups", "Others"].obs;
+  final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
 
   final RxList<Widget> _pages = <Widget>[
     const AllGroups(),
@@ -32,15 +34,23 @@ class _GroupsState extends State<Groups> {
 
   @override
   Widget build(BuildContext context) {
-    return BaseScaffold(
+    return  Scaffold(
+        key: _scaffoldKey,
+        drawer: const AppDrawer(),
         appBar: AppBar(
           forceMaterialTransparency: true,
-          leading: Padding(
-            padding: const EdgeInsets.all(14.0),
-            child: SvgPicture.asset(
-              AppImage.menu,
-              height: 12,
-              width: 12,
+          leading: GestureDetector(
+            onTap: () {
+              _scaffoldKey.currentState
+                  ?.openDrawer(); // Use the key to open the drawer
+            },
+            child: Padding(
+              padding: const EdgeInsets.all(14.0),
+              child: SvgPicture.asset(
+                AppImage.menu,
+                height: 12,
+                width: 12,
+              ),
             ),
           ),
           title: const Text(
